@@ -218,7 +218,6 @@ def main():
     real_data = generator.generate_dataset(
         num_samples=100,
         output_format='dict',
-        random_seed=123,  # Different seed for variety
         enable_progress=False
     )
     
