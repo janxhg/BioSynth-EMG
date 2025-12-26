@@ -12,8 +12,19 @@ A physics-based synthetic EMG signal generator for training low-latency neural n
 
 ## Installation
 
+### Option 1: Install from PyPI (Recommended)
+
 ```bash
+pip install biosynth-emg
+```
+
+### Option 2: Install from Source
+
+```bash
+git clone https://github.com/janxhg/BioSynth-EMG.git
+cd BioSynth-EMG
 pip install -r requirements.txt
+pip install -e .
 ```
 
 ## Usage
