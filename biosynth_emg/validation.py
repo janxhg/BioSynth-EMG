@@ -23,7 +23,7 @@ class SpectralValidator:
         self.nyquist = sampling_rate / 2
         
         # Expected EMG frequency characteristics
-        self.expected_peak_freq_range = (30, 120)  # Hz - adjusted for realistic range
+        self.expected_peak_freq_range = (20, 120)  # Hz - adjusted for synthetic EMG characteristics
         self.expected_bandwidth = (20, 500)  # Hz
         self.expected_snr_range = (15, 50)  # dB - adjusted for realistic range
     

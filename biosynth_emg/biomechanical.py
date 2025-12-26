@@ -21,8 +21,8 @@ class BiomechanicalLayer:
         self.num_motor_units = num_motor_units
         self.dt = 1.0 / sampling_rate
         
-        # Motor unit properties - optimized for target frequency range
-        self.firing_rates = np.random.uniform(40, 100, num_motor_units)  # Hz
+        # Motor unit properties - optimized for much higher peak frequencies
+        self.firing_rates = np.random.uniform(80, 150, num_motor_units)  # Hz
         self.recruitment_thresholds = np.sort(np.random.uniform(0.1, 1.0, num_motor_units))
         self.muscle_fiber_types = np.random.choice(['type_I', 'type_IIa', 'type_IIb'], 
                                                  num_motor_units, p=[0.5, 0.3, 0.2])

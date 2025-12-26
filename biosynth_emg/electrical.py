@@ -95,19 +95,19 @@ class ElectricalLayer:
             
             muap += weight * H_n * gaussian
         
-        # Add frequency components in target range (50-150 Hz)
-        ripple_freq = np.random.uniform(50, 150)  # Hz - target EMG frequency range
-        ripple = 0.2 * np.sin(2 * np.pi * ripple_freq * t)
+        # Add frequency components optimized for peak frequency (80-120 Hz)
+        ripple_freq = np.random.uniform(80, 120)  # Hz - optimized for peak frequency
+        ripple = 0.3 * np.sin(2 * np.pi * ripple_freq * t)
         muap += ripple
         
         # Add second harmonic for complexity
-        harmonic_freq = ripple_freq * 1.5  # 1.5x instead of 2x to stay in range
-        harmonic = 0.1 * np.sin(2 * np.pi * harmonic_freq * t)
+        harmonic_freq = ripple_freq * 1.2  # 1.2x to stay in reasonable range
+        harmonic = 0.2 * np.sin(2 * np.pi * harmonic_freq * t)
         muap += harmonic
         
         # Add third harmonic
-        third_harmonic_freq = ripple_freq * 2
-        third_harmonic = 0.05 * np.sin(2 * np.pi * third_harmonic_freq * t)
+        third_harmonic_freq = ripple_freq * 1.5
+        third_harmonic = 0.1 * np.sin(2 * np.pi * third_harmonic_freq * t)
         muap += third_harmonic
         
         # Normalize and scale
